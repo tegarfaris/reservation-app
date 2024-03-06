@@ -1,5 +1,5 @@
 import TitleSection from "@/app/components/title-section";
-import { ICONS } from "@/app/helper/image.helper";
+import { ICONS, PATTERNS } from "@/app/helper/image.helper";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import WOCSCardCustomer from "./wocs-card-customer";
@@ -67,15 +67,26 @@ const WhatOurCustomerSection = () => {
         <Image src={ICONS.QUOTE_ICON} alt="quote-asset" />
       </Box>
 
-      <Flex gap="20px" pt="10px" justifyContent="center">
-        {DATA_TESTIMONI.map((testimoni) => (
-          <WOCSCardCustomer
-            key={testimoni.id}
-            comment={testimoni.comment}
-            author={testimoni.author}
-            job={testimoni.job}
-          />
-        ))}
+      <Flex pos="relative" gap="20px" pt="10px" justifyContent="center">
+        <Flex pos="relative" gap="20px" w="full" zIndex={20}>
+          {DATA_TESTIMONI.map((testimoni) => (
+            <WOCSCardCustomer
+              key={testimoni.id}
+              comment={testimoni.comment}
+              author={testimoni.author}
+              job={testimoni.job}
+            />
+          ))}
+        </Flex>
+
+        <Image
+          pos="absolute"
+          top={-10}
+          right={-10}
+          src={PATTERNS.CIRCLE_PATTERN}
+          alt="pattern"
+          zIndex={10}
+        />
       </Flex>
     </Flex>
   );
