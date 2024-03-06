@@ -1,11 +1,32 @@
-import "@/styles/globals.css";
+import { AppPropsWithLayout } from "@/app/interface/home-page.interface";
+import DashboardLayout from "@/app/layout/dashboard-layout";
 import { ChakraProvider } from "@chakra-ui/react";
-import type { AppProps } from "next/app";
+import Head from "next/head";
+import "../styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
+  return getLayout(
+    <>
+      <Head>
+        <title>Reservation App</title>
+        <meta name="description" content="Reservation App" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      {Component.getLayout ? (
+        <ChakraProvider>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      ) : (
+        <ChakraProvider>
+          <DashboardLayout>
+            <Component {...pageProps} />
+          </DashboardLayout>
+        </ChakraProvider>
+      )}
+    </>
   );
 }
+
+export default App;
