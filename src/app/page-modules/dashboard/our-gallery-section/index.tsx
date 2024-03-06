@@ -1,5 +1,5 @@
 import TitleSection from "@/app/components/title-section";
-import { HERO } from "@/app/helper/image.helper";
+import { HERO, PATTERNS } from "@/app/helper/image.helper";
 import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
@@ -47,12 +47,24 @@ const OurGallerySection = () => {
         </GridItem>
         <GridItem pos="relative" zIndex={20} colSpan={2} position="relative">
           <Image
+            pos="relative"
             src={HERO.HERO_BG}
             w="564px"
             h="248px"
             objectFit="cover"
             alt="gallery-asset"
             borderRadius="5px"
+            zIndex={20}
+          />
+
+          {/* pattern asset */}
+          <Image
+            pos="absolute"
+            bottom={-10}
+            right={-10}
+            src={PATTERNS.CIRCLE_PATTERN}
+            alt="pattern"
+            zIndex={10}
           />
           <Box
             as={Flex}
@@ -66,6 +78,7 @@ const OurGallerySection = () => {
             w="564px"
             h="100%"
             borderRadius="5px"
+            zIndex={20}
           />
           <Text
             pos="absolute"
@@ -75,6 +88,7 @@ const OurGallerySection = () => {
             fontSize="16px"
             fontWeight={400}
             textDecoration="underline"
+            zIndex={20}
           >
             More photos
           </Text>
