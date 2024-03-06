@@ -4,7 +4,19 @@ import React from "react";
 
 const Navbar: React.FC = () => {
   return (
-    <Flex as="nav" maxW="1024px" mx="auto" gap="10px" justifyContent="space-between" bg="red">
+    <Flex
+      as="nav"
+      pos="absolute"
+      top={0}
+      w="100%"
+      px="190px"
+      gap="10px"
+      justifyContent="space-between"
+      bg="transparent"
+      zIndex={20}
+      color="white"
+      pt="30px"
+    >
       <Flex gap="10px">
         <Image src={ICONS.HAMBURGER_ICON} alt="hamburger-menu" />
         <Text>Villa Category</Text>

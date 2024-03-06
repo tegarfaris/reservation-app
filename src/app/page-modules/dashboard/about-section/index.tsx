@@ -1,3 +1,4 @@
+import TitleSection from "@/app/components/title-section";
 import { HERO, PATTERNS } from "@/app/helper/image.helper";
 import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import React from "react";
@@ -7,17 +8,12 @@ const AboutSection = () => {
     <Flex
       flexDir="column"
       bg="white"
-      minH="100vh"
+      minH="90vh"
       gap="100px"
       px="150px"
       mt="150px"
     >
-      <Text fontSize="40px" fontWeight={600}>
-        About Villa{" "}
-        <Text as="span" color="#106A64">
-          Amadaha
-        </Text>
-      </Text>
+      <TitleSection title="About Villa" greenText="Amadaha" />
 
       <Grid pos="relative" templateColumns="repeat(5, 1fr)">
         <GridItem colSpan={2}>

@@ -1,15 +1,42 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { ReactNode } from "react";
 
-const HeadingTitle = () => {
+interface HeadingTitleProps {
+  title: string;
+  subtitle?: string;
+  buttonText: string;
+  extraTitle?: string | ReactNode;
+}
+const HeadingTitle: React.FC<HeadingTitleProps> = ({
+  title,
+  subtitle,
+  buttonText,
+  extraTitle = "",
+}) => {
   return (
     <Flex flexDir="column" gap="10px" w="full">
-      <Text fontSize="40px" fontWeight={700} color="white">Make your comfort is our happiness</Text>
-      <Text color="white" fontWeight="400">
-        Studio villa made of bamboo, located near the top of Mount Geulis with a
-        stunning 180 degree bird&apos;s eye view.
+      <Text
+        fontSize="40px"
+        fontWeight={700}
+        color={extraTitle !== "" ? "#000" : "white"}
+      >
+        {title} {extraTitle !== "" && extraTitle}
       </Text>
-      <Button size="md" w="216px">Explore Rooms</Button>
+      <Text
+        color={extraTitle !== "" ? "#000" : "white"}
+        fontSize="20px"
+        fontWeight="400"
+      >
+        {subtitle}
+      </Text>
+      <Button
+        size="md"
+        w="216px"
+        color={extraTitle === "" ? "#000" : "white"}
+        bg={extraTitle !== "" ? "#106A64" : "white"}
+      >
+        {buttonText}
+      </Button>
     </Flex>
   );
 };
