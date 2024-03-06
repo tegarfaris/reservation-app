@@ -6,6 +6,8 @@ import AvaibilityCard from "./avaibility-card";
 import OurChoiceSection from "./our-choice-section";
 import VariousFacilitiesSection from "./various-facilities-section";
 import WhatOurCustomerSection from "./what-our-customer-section";
+import OurGallerySection from "./our-gallery-section";
+import CTASection from "./cta-section";
 
 const DashboardPage: React.FC = () => {
   return (
@@ -16,6 +18,8 @@ const DashboardPage: React.FC = () => {
       <OurChoiceSection />
       <VariousFacilitiesSection />
       <WhatOurCustomerSection />
+      <OurGallerySection />
+      <CTASection />
     </Flex>
   );
 };

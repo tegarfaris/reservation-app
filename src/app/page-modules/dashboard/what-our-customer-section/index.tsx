@@ -30,7 +30,7 @@ const WhatOurCustomerSection = () => {
   ];
 
   return (
-    <Flex flexDir="column" gap="20px" pos="relative" minH="100vh" px="190px">
+    <Flex flexDir="column" gap="20px" pos="relative" minH="70vh" px="190px">
       <Flex w="full" justifyContent="space-between" alignItems="start">
         <Flex pos="relative" zIndex={20} w="500px">
           <TitleSection
